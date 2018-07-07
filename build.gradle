@@ -1,0 +1,24 @@
+buildscript {
+    ext.kotlin_version = '1.2.50'
+    ext.lifecycle_version = '2.0.0-beta01' // or use the stable version from the non-x package (which is deprecated though)
+    ext.appcompat_version = '1.0.0-beta01' // or use the stable version from the non-x package (which is deprecated though)
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
